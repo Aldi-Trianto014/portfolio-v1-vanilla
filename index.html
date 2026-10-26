@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldi | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ini link Font Awesome buat manggil ikonnya -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.jpeg">
+</head>
+<body>
+
+    <!-- NAVBAR SECTION -->
+    <nav>
+        <!-- Kiri: Logo -->
+        <h1 class="logo">AL</h1>
+        
+        <!-- Tengah: Ikon Menu -->
+        <ul class="nav-links">
+            <li><a href="#home" title="Home"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#about" title="About"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="#contact" title="Contact"><i class="fa-solid fa-envelope"></i></a></li>
+        </ul>
+
+        <!-- Kanan: Tombol CV -->
+        <a href="#cv" class="btn-cv">View CV</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <!-- Kiri: Teks & Tombol -->
+        <div class="hero-content">
+            <p class="greeting">Hi, saya</p>
+            <h1 class="name">ALDI TRIANTO<span class="dot">.</span></h1>
+            <h2 class="role">Tech Enthusiast & Operational Logistic</h2>
+            <p class="desc">
+                A technology enthusiast, from gadgets to web and app development. Enjoys learning new things and has a career focus in administration, logistics, and operations.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">Explore Projects</a>
+                <a href="#" class="btn-secondary">
+                    <i class="fa-brands fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+
+        <!-- Kanan: Foto -->
+        <div class="hero-image">
+            <!-- Ini pake placeholder gambar kosong dulu, nanti bisa lu ganti pake foto asli lu -->
+            <img src="img/foto belakang.jpeg" alt="Foto Profil">
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    An operational practitioner with a track record across retail, warehousing, and logistics sectors, including file administration and education. Demonstrated operational data analysis skills, strong problem-solving initiative in the field, and adaptability in leading efficient team workflows and completing tasks independently.
+                </p>
+            </div>
+            
+            <!-- Kotak Highlight -->
+            <div class="about-stats">
+                <div class="stat-box">
+                    <h3>HTML/CSS/JS</h3>
+                    <p>Core Focus</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Excel & Data</h3>
+                    <p>Operational</p>
+                </div>
+                <div class="stat-box">
+                    <h3>Problem Solving</h3>
+                    <p>Hands-on</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">My <span>Projects</span></h2>
+        
+        <div class="project-grid">
+            <!-- Project 1: Web Portofolio -->
+            <div class="project-card">
+                <!-- Pake gambar sementara dulu -->
+                <img src="https://via.placeholder.com/400x250/1a1a1a/00d2ff?text=Web+Portfolio" alt="Web Portfolio">
+                <div class="project-info">
+                    <h3>Personal Web Portfolio</h3>
+                    <p>Web portofolio yang dibangun dari nol pakai Vanilla HTML, CSS, dan JS. Punya desain responsif dan tema dark-neon.</p>
+                    <a href="#" class="btn-project">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Project 2: Excel / Operasional -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x250/1a1a1a/00d2ff?text=Excel+Dashboard" alt="Excel System">
+                <div class="project-info">
+                    <h3>Excel Inventory System</h3>
+                    <p>Sistem pencatatan dan monitoring stok barang operasional menggunakan Microsoft Excel untuk efisiensi data.</p>
+                    <a href="#" class="btn-project">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+        
+        <div class="contact-container">
+            <!-- Form ini belum aktif kirim email beneran, buat UI dulu -->
+            <form action="#" class="contact-form">
+                <input type="text" placeholder="Nama Lu" required>
+                <input type="email" placeholder="Email Lu" required>
+                <textarea cols="30" rows="6" placeholder="Ketik pesan lu di sini..." required></textarea>
+                <button type="submit" class="btn-submit">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Aldi Trianto. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

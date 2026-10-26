@@ -1,0 +1,406 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Navbar Container */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #333;
+}
+
+/* Kiri: Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+/* Tengah: Container Ikon */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+}
+
+/* Tengah: Ikonnya */
+.nav-links li a {
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 22px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.nav-links li a:hover {
+    color: #00d2ff; /* Berubah jadi biru neon */
+    transform: translateY(-4px);
+}
+
+/* Kanan: Tombol View CV (Base State) */
+.btn-cv {
+    text-decoration: none;
+    color: #00d2ff; /* Teks biru neon */
+    background-color: transparent; 
+    border: 2px solid #00d2ff; /* Border biru neon */
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+/* Pas disorot mouse (Hover State) */
+.btn-cv:hover {
+    background-color: rgba(0, 210, 255, 0.1); /* Background biru transparan */
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); /* Efek glow biru */
+}
+
+/* Pas lagi diklik (Active State) */
+.btn-cv:active {
+    border-color: #ffffff; 
+    color: #ffffff; 
+    transform: scale(0.95); 
+    box-shadow: none; 
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 10%;
+    min-height: 80vh; /* Biar tingginya pas selayar monitor lu */
+}
+
+/* --- Bagian Kiri (Konten) --- */
+.hero-content {
+    max-width: 50%; /* Biar teksnya gak kepanjangan nabrak foto */
+}
+
+.greeting {
+    color: #00d2ff;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 64px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+/* Titik di ujung nama kita kasih warna biru neon biar seirama */
+.dot {
+    color: #00d2ff;
+}
+
+.role {
+    font-size: 26px;
+    font-weight: 600;
+    color: #aaaaaa;
+    margin-bottom: 20px;
+}
+
+.desc {
+    color: #888888;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+/* --- Tombol Hero --- */
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Tombol Kiri (Solid Blue) */
+.btn-primary {
+    text-decoration: none;
+    background-color: #00d2ff;
+    color: #121212;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #00d2ff;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: #00d2ff;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+/* Tombol Kanan (Outline Blue) */
+.btn-secondary {
+    text-decoration: none;
+    color: #00d2ff;
+    background-color: transparent;
+    border: 2px solid #00d2ff;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara ikon GitHub sama teks */
+}
+
+.btn-secondary:hover {
+    background-color: rgba(0, 210, 255, 0.1);
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+/* --- Bagian Kanan (Foto) --- */
+.hero-image img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 30px; /* Pinggiran melengkung smooth */
+    border: 2px solid #333;
+    /* Efek bayangan biru neon tipis di belakang foto */
+    box-shadow: 10px 10px 0px rgba(0, 210, 255, 0.2); 
+    transition: all 0.3s ease;
+}
+
+/* Pas foto disorot mouse */
+.hero-image img:hover {
+    transform: translate(-5px, -5px); /* Fotonya kayak ngangkat ke kiri atas */
+    box-shadow: 15px 15px 20px rgba(0, 210, 255, 0.4); /* Glownya makin terang */
+}
+
+/* ==================== ABOUT SECTION ==================== */
+.about {
+    padding: 100px 10%;
+    background-color: #1a1a1a; /* Background dibedain dikit dari hero section biar ada batasnya */
+}
+
+.section-title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 60px;
+    color: #ffffff;
+}
+
+/* Bikin kata "Me" jadi biru neon */
+.section-title span {
+    color: #00d2ff;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text {
+    text-align: center;
+    max-width: 800px; /* Biar teksnya gak kepanjangan ke ujung layar */
+}
+
+.about-text p {
+    color: #aaaaaa;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* --- Kotak Highlight --- */
+.about-stats {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap; /* Kalo layarnya kekecilan, kotaknya otomatis turun ke bawah */
+}
+
+.stat-box {
+    background-color: #121212;
+    padding: 30px 40px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    text-align: center;
+    min-width: 220px;
+    transition: all 0.3s ease;
+}
+
+/* Efek nyala biru pas disorot */
+.stat-box:hover {
+    border-color: #00d2ff;
+    transform: translateY(-8px); /* Kotak ngangkat lebih tinggi dikit */
+    box-shadow: 0 10px 25px rgba(0, 210, 255, 0.15);
+}
+
+.stat-box h3 {
+    color: #00d2ff;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.stat-box p {
+    color: #888888;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+/* ==================== PROJECTS SECTION ==================== */
+.projects {
+    padding: 100px 10%;
+    background-color: #121212; /* Balik ke warna dasar biar selang-seling sama About */
+}
+
+.project-grid {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap; /* Kalo layarnya sempit, otomatis turun ke bawah */
+}
+
+/* --- Kartu Projek --- */
+.project-card {
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden; /* Biar gambar gak keluar/ngelewatin lengkungan border */
+    border: 1px solid #333;
+    width: 350px;
+    transition: all 0.3s ease;
+}
+
+/* Pas kartu disorot mouse */
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: #00d2ff;
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #333;
+}
+
+.project-info {
+    padding: 25px;
+}
+
+.project-info h3 {
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    color: #aaaaaa;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Link Lihat Detail */
+.btn-project {
+    text-decoration: none;
+    color: #00d2ff;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-project:hover {
+    color: #ffffff;
+    gap: 12px; /* Panahnya geser dikit pas disorot */
+}
+
+/* ==================== CONTACT SECTION ==================== */
+.contact {
+    padding: 100px 10%;
+    background-color: #1a1a1a; /* Balik ke warna agak terang dikit */
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto; /* Biar form-nya persis di tengah layar */
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Styling buat kolom input teks dan area pesan */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 16px;
+    background-color: #121212;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Efek pas kolomnya diklik/diketik */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #00d2ff;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+}
+
+/* Tombol Kirim Pesan */
+.btn-submit {
+    background-color: #00d2ff;
+    color: #121212;
+    padding: 16px;
+    border: 2px solid #00d2ff;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: transparent;
+    color: #00d2ff;
+    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #121212;
+    border-top: 1px solid #333;
+    color: #888888;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
