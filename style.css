@@ -12,14 +12,78 @@ body {
     color: #ffffff;
 }
 
+/* ==================== AMBIENT BACKGROUND ==================== */
+.bg-ambient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1; /* Ngumpet di belakang semua konten */
+    pointer-events: none; /* Biar gak nutupin klik tombol lu */
+    background-color: #0a0a0a;
+}
+
+/* Bola-bola warnanya */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px); /* Ngeblur ekstrim ala Alex.Dev */
+    opacity: 0.4;
+    animation: floatBlob 10s infinite ease-in-out alternate;
+}
+
+/* Warna cyan/neon sesuai tema lu */
+.blob-1 {
+    width: 400px; height: 400px;
+    background-color: #00d2ff;
+    top: -10%; left: -10%;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 350px; height: 350px;
+    background-color: #0055ff; /* Biru tua dikit biar ada gradasi */
+    bottom: -10%; right: -10%;
+    animation-delay: 2s;
+}
+
+.blob-3 {
+    width: 300px; height: 300px;
+    background-color: #00a2ff;
+    top: 40%; left: 40%;
+    animation-delay: 4s;
+}
+
+/* Animasi melayang ngambang */
+@keyframes floatBlob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    50% { transform: translate(30px, -50px) scale(1.1); }
+    100% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
 /* Navbar Container */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
-    background-color: #1a1a1a;
-    border-bottom: 1px solid #333;
+    padding: 15px 5%; 
+    background-color: rgba(26, 26, 26, 0.4); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 20px; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    
+    /* 👇 INI YANG DIRUBAH 👇 */
+    position: fixed; /* Ganti sticky jadi fixed biar ngambang total gak makan tempat */
+    top: 20px; 
+    left: 50%; /* Tarik ke tengah */
+    transform: translateX(-50%); /* Trik wajib buat nengahin elemen fixed */
+    z-index: 100;
 }
 
 /* Kiri: Logo */
@@ -84,8 +148,9 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 80px 10%;
-    min-height: 80vh; /* Biar tingginya pas selayar monitor lu */
+    /* Urutannya: Atas 130px (buat bemper navbar), Kiri-Kanan 10%, Bawah 0 */
+    padding: 130px 10% 0; 
+    min-height: 100vh; 
 }
 
 /* --- Bagian Kiri (Konten) --- */
@@ -177,9 +242,9 @@ nav {
     width: 350px;
     height: 350px;
     object-fit: cover;
-    border-radius: 30px; /* Pinggiran melengkung smooth */
-    border: 2px solid #333;
-    /* Efek bayangan biru neon tipis di belakang foto */
+    border-radius: 50%; /* 👈 Ini yang bikin foto, border, dan shadownya jadi lingkaran penuh */
+    border: 2px solid #333; 
+    /* Efek bayangan biru neon di belakang foto */
     box-shadow: 10px 10px 0px rgba(0, 210, 255, 0.2); 
     transition: all 0.3s ease;
 }
@@ -190,10 +255,14 @@ nav {
     box-shadow: 15px 15px 20px rgba(0, 210, 255, 0.4); /* Glownya makin terang */
 }
 
-/* ==================== ABOUT SECTION ==================== */
-.about {
-    padding: 100px 10%;
-    background-color: #1a1a1a; /* Background dibedain dikit dari hero section biar ada batasnya */
+/* ==================== SECTIONS (ABOUT, PROJECTS, CONTACT) ==================== */
+.about, .projects, .contact {
+    padding: 160px 10%; /* 👈 Angka depannya kita naikin dari 100px jadi 160px biar atas-bawahnya lebih renggang */
+    /* Efek kaca tipis tanpa garis (border) */
+    background-color: transparent; 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: none; 
 }
 
 .section-title {
@@ -204,9 +273,6 @@ nav {
 }
 
 /* Bikin kata "Me" jadi biru neon */
-.section-title span {
-    color: #00d2ff;
-}
 
 .about-content {
     display: flex;
@@ -267,10 +333,6 @@ nav {
 }
 
 /* ==================== PROJECTS SECTION ==================== */
-.projects {
-    padding: 100px 10%;
-    background-color: #121212; /* Balik ke warna dasar biar selang-seling sama About */
-}
 
 .project-grid {
     display: flex;
@@ -281,10 +343,11 @@ nav {
 
 /* --- Kartu Projek --- */
 .project-card {
-    background-color: #1a1a1a;
+    background-color: rgba(26, 26, 26, 0.5);
+    backdrop-filter: blur(8px);
     border-radius: 15px;
-    overflow: hidden; /* Biar gambar gak keluar/ngelewatin lengkungan border */
-    border: 1px solid #333;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     width: 350px;
     transition: all 0.3s ease;
 }
@@ -338,10 +401,6 @@ nav {
 }
 
 /* ==================== CONTACT SECTION ==================== */
-.contact {
-    padding: 100px 10%;
-    background-color: #1a1a1a; /* Balik ke warna agak terang dikit */
-}
 
 .contact-container {
     max-width: 600px;
@@ -359,7 +418,7 @@ nav {
 .contact-form textarea {
     width: 100%;
     padding: 16px;
-    background-color: #121212;
+    background-color: #12121200;
     border: 1px solid #333;
     border-radius: 8px;
     color: #ffffff;
@@ -398,9 +457,29 @@ nav {
 footer {
     text-align: center;
     padding: 25px;
-    background-color: #121212;
-    border-top: 1px solid #333;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    /* border-top dihapus */
     color: #888888;
     font-size: 14px;
     letter-spacing: 1px;
+}
+
+/* ==================== JS ANIMATION CLASSES ==================== */
+/* Posisi awal sebelum muncul (Ngumpet & Turun 50px) */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+/* Posisi pas disorot layar (Kelihatan & Balik ke posisi normal) */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Biar pas lu klik menu di navbar, scroll-nya jalan mulus */
+html {
+    scroll-behavior: smooth;
 }
