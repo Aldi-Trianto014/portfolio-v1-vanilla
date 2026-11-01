@@ -257,8 +257,7 @@ nav {
 
 /* ==================== SECTIONS (ABOUT, PROJECTS, CONTACT) ==================== */
 .about, .projects, .contact {
-    padding: 160px 10%; /* 👈 Angka depannya kita naikin dari 100px jadi 160px biar atas-bawahnya lebih renggang */
-    /* Efek kaca tipis tanpa garis (border) */
+    padding: 160px 10%; 
     background-color: transparent; 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -268,68 +267,102 @@ nav {
 .section-title {
     text-align: center;
     font-size: 40px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     color: #ffffff;
 }
 
-/* Bikin kata "Me" jadi biru neon */
-
-.about-content {
+/* ==================== ABOUT SECTION (NEW LAYOUT 3 KOLOM) ==================== */
+.about-grid {
     display: flex;
-    flex-direction: column;
-    gap: 50px;
+    justify-content: space-between;
     align-items: center;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-.about-text {
-    text-align: center;
-    max-width: 800px; /* Biar teksnya gak kepanjangan ke ujung layar */
+/* Kolom Kiri & Kanan biar porsinya seimbang */
+.about-left, .about-right {
+    flex: 1;
 }
 
-.about-text p {
-    color: #aaaaaa;
+/* Kolom Kiri */
+.about-left {
+    text-align: left; /* Teks mepet ke foto di tengah */
+}
+
+.greeting-small {
+    color: #00d2ff;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.name-small {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+.mt-4 {
+    display: inline-block;
+}
+
+/* Kolom Kanan */
+.about-right p {
+    color: #ffffff;
     font-size: 18px;
     line-height: 1.8;
-    margin-bottom: 20px;
+    text-align: left; /* Teks mepet ke foto dari sisi kanan */
 }
 
-/* --- Kotak Highlight --- */
-.about-stats {
+/* Kolom Tengah (Foto Interaktif) */
+.about-center {
+    flex: 0 0 350px; 
     display: flex;
-    gap: 30px;
     justify-content: center;
-    flex-wrap: wrap; /* Kalo layarnya kekecilan, kotaknya otomatis turun ke bawah */
+    position: relative;
 }
 
-.stat-box {
-    background-color: #121212;
-    padding: 30px 40px;
-    border-radius: 15px;
-    border: 1px solid #333;
-    text-align: center;
-    min-width: 220px;
-    transition: all 0.3s ease;
+/* Container Foto + Efek Masking Gradasi di Bawah */
+.photo-container {
+    position: relative;
+    width: 320px;
+    height: 350px; /* 👈 Tinggi dipotong dari 400px biar atasnya gak kopong */
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    cursor: pointer;
 }
 
-/* Efek nyala biru pas disorot */
-.stat-box:hover {
-    border-color: #00d2ff;
-    transform: translateY(-8px); /* Kotak ngangkat lebih tinggi dikit */
-    box-shadow: 0 10px 25px rgba(0, 210, 255, 0.15);
+/* Setting dasar fotonya */
+.photo-base, .photo-hover {
+    position: absolute;
+    bottom: -10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease;
 }
 
-.stat-box h3 {
-    color: #00d2ff;
-    font-size: 24px;
-    margin-bottom: 10px;
+/* Sembunyiin kostum Spidey di awal */
+.photo-hover {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.95); 
 }
 
-.stat-box p {
-    color: #888888;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
+/* Animasi pas kursor masuk (Hover) */
+.photo-container:hover .photo-base {
+    opacity: 0;
+}
+
+.photo-container:hover .photo-hover {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.05); /* Spidey-nya agak maju dikit */
 }
 
 /* ==================== PROJECTS SECTION ==================== */

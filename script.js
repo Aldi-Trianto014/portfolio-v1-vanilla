@@ -21,8 +21,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Pilih elemen mana aja yang mau dikasih efek muncul
-const elementsToReveal = document.querySelectorAll('.hero-content, .hero-image, .section-title, .about-text, .stat-box, .project-card, .contact-container');
-
+const elementsToReveal = document.querySelectorAll('.hero-content, .hero-image, .section-title, .about-left, .about-center, .about-right, .project-card, .contact-container');
 elementsToReveal.forEach(el => {
     el.classList.add('reveal'); // JS otomatis nambahin class 'reveal' ke HTML lu
     observer.observe(el);
