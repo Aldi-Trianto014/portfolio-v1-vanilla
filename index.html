@@ -41,18 +41,20 @@
                 A technology enthusiast, from gadgets to administration and graphic designing. Enjoys learning new things and has a career focus in administration, logistics, and operations.
             </p>
             <div class="hero-buttons">
-                <a href="#works" class="btn-primary">Explore Works</a>
-                <a href="#" class="btn-secondary">
+                <!-- Tombol dibikin balance warnanya -->
+                <a href="#works" class="btn-primary-alt">Explore Works</a>
+                <a href="#" class="btn-secondary-alt">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
             </div>
         </div>
 
-        <!-- Foto Click & Switch -->
+        <!-- Foto Click & Switch + Muter-Muter -->
         <div class="hero-image reveal" style="transition-delay: 200ms;">
-            <!-- Placeholder abu putih sebagai cover depan -->
-            <img src="https://via.placeholder.com/350x350/cccccc/ffffff?text=?" alt="Click Me" class="hero-img-front" id="heroPhotoFront">
-            <!-- Foto lu ngumpet di belakang -->
+            <!-- Cincin glow putih muter TERUS (bukan hover) -->
+            <div class="glow-ring"></div>
+            <!-- Foto lu ditumpuk -->
+            <img src="https://via.placeholder.com/350x350/000000/ffffff?text=?" alt="Placeholder" class="hero-img-front" id="heroPhotoFront">
             <img src="img/foto belakang.jpeg" alt="Foto Profil" class="hero-img-back" id="heroPhotoBack">
         </div>
     </section>
@@ -64,16 +66,17 @@
         <div class="about-grid">
             <div class="about-left reveal">
                 <p class="greeting-small">Hi, I'am</p>
-                <!-- Hapus margin bawah Aldi biar nempel sama Trianto -->
                 <h3 class="name-small" style="margin-bottom: 0;">Aldi</h3>
                 <h3 class="name-small">Trianto</h3>
                 <a href="#cv" class="btn-primary mt-4">View CV</a>
             </div>
 
+            <!-- Area Interaktif Hover Spiderman (Radius Kursor) -->
             <div class="about-center reveal" style="transition-delay: 100ms;">
-                <div class="photo-container">
+                <div class="photo-container" id="spideyContainer">
                     <img src="img/kaos.png" alt="Aldi Biasa" class="photo-base">
-                    <img src="img/kostum.png" alt="Aldi Spiderman" class="photo-hover">
+                    <!-- Foto Spiderman yang muncul lewat clip-path kursor -->
+                    <img src="img/kostum.png" alt="Aldi Spiderman" class="photo-hover-radius" id="spideyPhoto">
                 </div>
             </div>
 
@@ -99,13 +102,17 @@
     <section id="works" class="projects">
         <h2 class="section-title reveal">Little Bit <span>Creations</span></h2>
         
-        <!-- Code Portfolio -->
+        <!-- ================= 1. AREA CODE PORTFOLIO ================= -->
         <div class="portfolio-category reveal">
-            <h3 class="category-title-left"><i class="fa-solid fa-code"></i> Code</h3>
+            <!-- Judul Code dinaikin -->
+            <h3 class="title-code"><i class="fa-solid fa-code"></i> Code</h3>
             
             <div class="code-grid">
                 <div class="code-card">
-                    <img src="https://via.placeholder.com/600x300/1a1a1a/00d2ff?text=Web+Portfolio" alt="Web Portfolio">
+                    <div class="card-image-wrapper">
+                        <img src="https://via.placeholder.com/600x300/1a1a1a/00d2ff?text=Code+1" alt="Code 1">
+                        <div class="image-fade"></div>
+                    </div>
                     <div class="code-info">
                         <h3>Code 1</h3>
                         <a href="#" class="btn-project">View More<i class="fa-solid fa-arrow-right"></i></a>
@@ -113,27 +120,65 @@
                 </div>
 
                 <div class="code-card">
-                    <img src="https://via.placeholder.com/600x300/1a1a1a/00d2ff?text=Excel+Dashboard" alt="Excel System">
+                    <div class="card-image-wrapper">
+                        <img src="https://via.placeholder.com/600x300/1a1a1a/00d2ff?text=Code+2" alt="Code 2">
+                        <div class="image-fade"></div>
+                    </div>
                     <div class="code-info">
                         <h3>Code 2</h3>
                         <a href="#" class="btn-project">View More<i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
 
-                <!-- Tambahan Card Ketiga Biar Pas 3 Kolom -->
                 <div class="code-card">
-                    <img src="https://via.placeholder.com/600x300/1a1a1a/00d2ff?text=Third+Project" alt="Third Project">
+                    <div class="card-image-wrapper">
+                        <img src="https://via.placeholder.com/600x300/1a1a1a/00d2ff?text=Code+3" alt="Code 3">
+                        <div class="image-fade"></div>
+                    </div>
                     <div class="code-info">
                         <h3>Code 3</h3>
+                        <a href="#" class="btn-project">View More<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="code-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://via.placeholder.com/600x300/1a1a1a/00d2ff?text=Code+4" alt="Code 4">
+                        <div class="image-fade"></div>
+                    </div>
+                    <div class="code-info">
+                        <h3>Code 4</h3>
+                        <a href="#" class="btn-project">View More<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="code-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://via.placeholder.com/600x300/1a1a1a/00d2ff?text=Code+5" alt="Code 5">
+                        <div class="image-fade"></div>
+                    </div>
+                    <div class="code-info">
+                        <h3>Code 5</h3>
+                        <a href="#" class="btn-project">View More<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="code-card">
+                    <div class="card-image-wrapper">
+                        <img src="https://via.placeholder.com/600x300/1a1a1a/00d2ff?text=Code+6" alt="Code 6">
+                        <div class="image-fade"></div>
+                    </div>
+                    <div class="code-info">
+                        <h3>Code 6</h3>
                         <a href="#" class="btn-project">View More<i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Design Portfolio (12 Bulan Folder Hover) -->
+        <!-- ================= 2. AREA DESIGN PORTFOLIO ================= -->
         <div class="portfolio-category reveal mt-5">
-            <h3 class="category-title-left"><i class="fa-solid fa-pen-nib"></i> Design</h3>
+            <h3 class="title-design"><i class="fa-solid fa-pen-nib"></i> Design</h3>
             
             <div class="design-grid-4x3">
                 <a href="januari.html" class="folder-card">
@@ -208,14 +253,15 @@
                 <form action="#" class="contact-form">
                     <input type="text" placeholder="Nama Lu" required>
                     <input type="email" placeholder="Email Lu" required>
-                    <textarea cols="30" rows="5" placeholder="Ketik pesan lu di sini..." required></textarea>
+                    <!-- Rows dikurangin biar gak terlalu tinggi formnya -->
+                    <textarea cols="30" rows="4" placeholder="Ketik pesan lu di sini..." required></textarea>
                     <button type="submit" class="btn-submit">Kirim Pesan</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (Nyatu Sama Contact) -->
     <footer>
         <p>&copy; 2026 Aldi Trianto. All Rights Reserved.</p>
     </footer>
