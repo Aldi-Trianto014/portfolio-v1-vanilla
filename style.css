@@ -3,10 +3,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Body */
 body {
     background-color: #121212;
     color: #ffffff;
@@ -20,127 +19,71 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    z-index: -1; /* Ngumpet di belakang semua konten */
-    pointer-events: none; /* Biar gak nutupin klik tombol lu */
+    z-index: -1; 
+    pointer-events: none; 
     background-color: #0a0a0a;
 }
 
-/* Bola-bola warnanya */
 .blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(90px); /* Ngeblur ekstrim ala Alex.Dev */
+    filter: blur(90px); 
     opacity: 0.4;
     animation: floatBlob 10s infinite ease-in-out alternate;
 }
 
-/* Warna cyan/neon sesuai tema lu */
-.blob-1 {
-    width: 400px; height: 400px;
-    background-color: #00d2ff;
-    top: -10%; left: -10%;
-    animation-delay: 0s;
-}
+.blob-1 { width: 400px; height: 400px; background-color: #00d2ff; top: -10%; left: -10%; animation-delay: 0s; }
+.blob-2 { width: 350px; height: 350px; background-color: #0055ff; bottom: -10%; right: -10%; animation-delay: 2s; }
+.blob-3 { width: 300px; height: 300px; background-color: #00a2ff; top: 40%; left: 40%; animation-delay: 4s; }
 
-.blob-2 {
-    width: 350px; height: 350px;
-    background-color: #0055ff; /* Biru tua dikit biar ada gradasi */
-    bottom: -10%; right: -10%;
-    animation-delay: 2s;
-}
-
-.blob-3 {
-    width: 300px; height: 300px;
-    background-color: #00a2ff;
-    top: 40%; left: 40%;
-    animation-delay: 4s;
-}
-
-/* Animasi melayang ngambang */
 @keyframes floatBlob {
     0% { transform: translate(0px, 0px) scale(1); }
     50% { transform: translate(30px, -50px) scale(1.1); }
     100% { transform: translate(-20px, 20px) scale(0.9); }
 }
 
-/* Navbar Container */
+/* ==================== NAVBAR (Active Highlight Style) ==================== */
 nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; 
     align-items: center;
-    padding: 15px 5%; 
+    padding: 12px 30px; 
     background-color: rgba(26, 26, 26, 0.4); 
     backdrop-filter: blur(12px); 
     -webkit-backdrop-filter: blur(12px);
-    
-    width: 90%;
-    max-width: 1200px;
-    border-radius: 20px; 
-    border: 1px solid rgba(255, 255, 255, 0.1); 
-    
-    /* 👇 INI YANG DIRUBAH 👇 */
-    position: fixed; /* Ganti sticky jadi fixed biar ngambang total gak makan tempat */
-    top: 20px; 
-    left: 50%; /* Tarik ke tengah */
-    transform: translateX(-50%); /* Trik wajib buat nengahin elemen fixed */
+    width: max-content; 
+    border-radius: 50px; 
+    border: 1px solid #ffffff; 
+    position: fixed; 
+    top: 25px; 
+    left: 50%; 
+    transform: translateX(-50%); 
     z-index: 100;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
-/* Kiri: Logo */
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    cursor: pointer;
-}
-
-/* Tengah: Container Ikon */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 50px;
+    gap: 35px; 
 }
 
-/* Tengah: Ikonnya */
-.nav-links li a {
+.nav-item {
     color: #aaaaaa;
     text-decoration: none;
-    font-size: 22px;
-    transition: all 0.3s ease;
+    font-size: 20px;
+    transition: color 0.3s ease; /* Hapus transform translateY biar gak naik */
     display: inline-block;
 }
 
-.nav-links li a:hover {
-    color: #00d2ff; /* Berubah jadi biru neon */
-    transform: translateY(-4px);
-}
-
-/* Kanan: Tombol View CV (Base State) */
-.btn-cv {
-    text-decoration: none;
-    color: #00d2ff; /* Teks biru neon */
-    background-color: transparent; 
-    border: 2px solid #00d2ff; /* Border biru neon */
-    padding: 10px 24px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 15px;
-    transition: all 0.2s ease;
-    cursor: pointer;
-}
-
-/* Pas disorot mouse (Hover State) */
-.btn-cv:hover {
-    background-color: rgba(0, 210, 255, 0.1); /* Background biru transparan */
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); /* Efek glow biru */
-}
-
-/* Pas lagi diklik (Active State) */
-.btn-cv:active {
-    border-color: #ffffff; 
+/* Pas di hover berubah jadi putih polos doang */
+.nav-item:hover {
     color: #ffffff; 
-    transform: scale(0.95); 
-    box-shadow: none; 
+}
+
+/* Pas layarnya lagi di section itu, ikonnya nyala biru */
+.nav-item.active {
+    color: #00d2ff;
 }
 
 /* ==================== HERO SECTION ==================== */
@@ -148,66 +91,79 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Urutannya: Atas 130px (buat bemper navbar), Kiri-Kanan 10%, Bawah 0 */
-    padding: 130px 10% 0; 
+    padding: 0px 10% 0; 
     min-height: 100vh; 
 }
 
-/* --- Bagian Kiri (Konten) --- */
 .hero-content {
-    max-width: 50%; /* Biar teksnya gak kepanjangan nabrak foto */
+    max-width: 50%; 
 }
 
 .greeting {
     color: #00d2ff;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .name {
-    font-size: 64px;
+    font-size: 60px;
     font-weight: 900;
     line-height: 1.1;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
 }
 
-/* Titik di ujung nama kita kasih warna biru neon biar seirama */
-.dot {
-    color: #00d2ff;
-}
-
+/* TYPING ANIMATION STYLING */
 .role {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
     color: #aaaaaa;
     margin-bottom: 20px;
+    min-height: 36px; /* Biar baris gak naik turun pas teks dihapus */
+}
+
+.typing-text {
+    color: #00d2ff; /* Teks yang diketik warna neon */
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    color: #00d2ff;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
 .desc {
     color: #888888;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.7;
     margin-bottom: 40px;
 }
 
-/* --- Tombol Hero --- */
 .hero-buttons {
     display: flex;
     gap: 20px;
 }
 
-/* Tombol Kiri (Solid Blue) */
-.btn-primary {
+.btn-primary, .btn-secondary {
     text-decoration: none;
-    background-color: #00d2ff;
-    color: #121212;
     padding: 12px 30px;
-    border-radius: 8px;
+    border-radius: 15px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     border: 2px solid #00d2ff;
     transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #00d2ff;
+    color: #ffffff;
 }
 
 .btn-primary:hover {
@@ -216,20 +172,12 @@ nav {
     box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
 }
 
-/* Tombol Kanan (Outline Blue) */
 .btn-secondary {
-    text-decoration: none;
     color: #00d2ff;
     background-color: transparent;
-    border: 2px solid #00d2ff;
-    padding: 12px 30px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 16px;
-    transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    gap: 10px; /* Jarak antara ikon GitHub sama teks */
+    gap: 10px; 
 }
 
 .btn-secondary:hover {
@@ -237,27 +185,49 @@ nav {
     box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
 }
 
-/* --- Bagian Kanan (Foto) --- */
-.hero-image img {
+/* CLICK & SWITCH HERO PHOTO */
+.hero-image {
+    position: relative;
     width: 350px;
     height: 350px;
-    object-fit: cover;
-    border-radius: 50%; /* 👈 Ini yang bikin foto, border, dan shadownya jadi lingkaran penuh */
+    border-radius: 50%;
+    cursor: pointer;
     border: 2px solid #333; 
-    /* Efek bayangan biru neon di belakang foto */
     box-shadow: 10px 10px 0px rgba(0, 210, 255, 0.2); 
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
-/* Pas foto disorot mouse */
-.hero-image img:hover {
-    transform: translate(-5px, -5px); /* Fotonya kayak ngangkat ke kiri atas */
-    box-shadow: 15px 15px 20px rgba(0, 210, 255, 0.4); /* Glownya makin terang */
+/* Container-nya nyala glow pas disorot biar ketahuan bisa di-klik */
+.hero-image:hover {
+    box-shadow: 15px 15px 25px rgba(0, 210, 255, 0.5); 
 }
 
-/* ==================== SECTIONS (ABOUT, PROJECTS, CONTACT) ==================== */
-.about, .projects, .contact {
-    padding: 160px 10%; 
+.hero-img-front, .hero-img-back {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    border-radius: 50%; 
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease;
+}
+
+/* Default state: Placeholder nongol, foto lu transparan disembunyiin */
+.hero-img-front { opacity: 1; transform: scale(1); }
+.hero-img-back { opacity: 0; transform: scale(0.9); }
+
+/* Kalo container dikasih class .switched (lewat JS pas diklik) */
+.hero-image.switched .hero-img-front {
+    opacity: 0; 
+    transform: scale(1.1); /* Efek hancur ke depan */
+}
+.hero-image.switched .hero-img-back {
+    opacity: 1; 
+    transform: scale(1); /* Foto lu muncul mantap */
+}
+
+/* ==================== GLOBAL SECTIONS ==================== */
+.about, .experience, .projects, .contact {
+    padding: 100px 10%; 
     background-color: transparent; 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -266,161 +236,100 @@ nav {
 
 .section-title {
     text-align: center;
-    font-size: 40px;
-    margin-bottom: 20px;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 30px;
     color: #ffffff;
 }
 
-/* ==================== ABOUT SECTION (NEW LAYOUT 3 KOLOM) ==================== */
-.about-grid {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    max-width: 1100px;
+.section-title span {
+    color: #00d2ff;
+}
+
+/* ==================== ABOUT SECTION ==================== */
+.about-grid { display: flex; justify-content: space-between; align-items: center; gap: 40px; max-width: 1100px; margin: 0 auto; }
+.about-left, .about-right { flex: 1; }
+.about-left { text-align: left; }
+.greeting-small { color: #00d2ff; font-size: 26px; font-weight: 600; margin-bottom: 5px; }
+.name-small { font-size: 48px; font-weight: 900; line-height: 1.2; color: #ffffff; }
+.mt-4 { display: inline-block; margin-top: 25px; } /* Jaga jarak tombol CV ke teks Aldi Trianto */
+.about-right p { color: #ffffff; font-size: 14px; line-height: 1.8; text-align: left; }
+.about-center { flex: 0 0 350px; display: flex; justify-content: center; position: relative; }
+.photo-container { position: relative; width: 320px; height: 350px; overflow: hidden; -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%); mask-image: linear-gradient(to bottom, black 70%, transparent 100%); cursor: pointer; }
+.photo-base, .photo-hover { position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 100%; height: auto; object-fit: cover; transition: opacity 0.5s ease-in-out, transform 0.5s ease; }
+.photo-hover { opacity: 0; transform: translateX(-50%) scale(0.95); }
+.photo-container:hover .photo-base { opacity: 0; }
+.photo-container:hover .photo-hover { opacity: 1; transform: translateX(-50%) scale(1.05); }
+
+/* ==================== EXPERIENCE SECTION ==================== */
+/* Kosongan dulu, nanti lu isi gampang */
+
+/* ==================== CRAFTED WORKS SECTION (REVISED) ==================== */
+.portfolio-category { margin-bottom: 60px; }
+.mt-5 { margin-top: 80px; }
+
+.category-title-left {
+    text-align: left;
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 700;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.category-title-left i { color: #00d2ff; margin-right: 10px; }
+
+/* --- Code Grid (Dipersempit, 3 Kolom) --- */
+.code-grid {
+    display: grid;
+    /* Lebar maksimal kolom 300px biar muat 3 buah berjajar */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1000px; /* Lebar dibatasin kayak Design */
     margin: 0 auto;
 }
 
-/* Kolom Kiri & Kanan biar porsinya seimbang */
-.about-left, .about-right {
-    flex: 1;
-}
-
-/* Kolom Kiri */
-.about-left {
-    text-align: left; /* Teks mepet ke foto di tengah */
-}
-
-.greeting-small {
-    color: #00d2ff;
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 5px;
-}
-
-.name-small {
-    font-size: 48px;
-    font-weight: 900;
-    line-height: 1.2;
-    margin-bottom: 25px;
-    color: #ffffff;
-}
-
-.mt-4 {
-    display: inline-block;
-}
-
-/* Kolom Kanan */
-.about-right p {
-    color: #ffffff;
-    font-size: 18px;
-    line-height: 1.8;
-    text-align: left; /* Teks mepet ke foto dari sisi kanan */
-}
-
-/* Kolom Tengah (Foto Interaktif) */
-.about-center {
-    flex: 0 0 350px; 
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-/* Container Foto + Efek Masking Gradasi di Bawah */
-.photo-container {
-    position: relative;
-    width: 320px;
-    height: 350px; /* 👈 Tinggi dipotong dari 400px biar atasnya gak kopong */
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-    cursor: pointer;
-}
-
-/* Setting dasar fotonya */
-.photo-base, .photo-hover {
-    position: absolute;
-    bottom: -10px; 
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease;
-}
-
-/* Sembunyiin kostum Spidey di awal */
-.photo-hover {
-    opacity: 0;
-    transform: translateX(-50%) scale(0.95); 
-}
-
-/* Animasi pas kursor masuk (Hover) */
-.photo-container:hover .photo-base {
-    opacity: 0;
-}
-
-.photo-container:hover .photo-hover {
-    opacity: 1;
-    transform: translateX(-50%) scale(1.05); /* Spidey-nya agak maju dikit */
-}
-
-/* ==================== PROJECTS SECTION ==================== */
-
-.project-grid {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap; /* Kalo layarnya sempit, otomatis turun ke bawah */
-}
-
-/* --- Kartu Projek --- */
-.project-card {
+.code-card {
     background-color: rgba(26, 26, 26, 0.5);
     backdrop-filter: blur(8px);
     border-radius: 15px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    width: 350px;
     transition: all 0.3s ease;
+    /* Dihapus: Hapus animasi translate/naik ke atas */
 }
 
-/* Pas kartu disorot mouse */
-.project-card:hover {
-    transform: translateY(-10px);
+/* Hovernya cukup ubah warna border dan ngasih cahaya dikit */
+.code-card:hover {
     border-color: #00d2ff;
-    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
+    box-shadow: 0 0 20px rgba(0, 210, 255, 0.2);
 }
 
-.project-card img {
+.code-card img {
     width: 100%;
-    height: 200px;
+    height: 180px; /* Dipersempit tingginya */
     object-fit: cover;
     border-bottom: 1px solid #333;
 }
 
-.project-info {
-    padding: 25px;
+.code-info { 
+    padding: 15px 20px; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
 }
 
-.project-info h3 {
+.code-info h3 {
     color: #ffffff;
-    font-size: 22px;
-    margin-bottom: 10px;
+    font-size: 18px; /* Dikecilin biar rapi */
+    font-weight: 700;
 }
 
-.project-info p {
-    color: #aaaaaa;
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-/* Link Lihat Detail */
 .btn-project {
     text-decoration: none;
     color: #00d2ff;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
     display: flex;
     align-items: center;
@@ -430,89 +339,60 @@ nav {
 
 .btn-project:hover {
     color: #ffffff;
-    gap: 12px; /* Panahnya geser dikit pas disorot */
+    gap: 12px; 
 }
+
+/* --- Design Grid (12 Bulan Folder Hover, 4x3) --- */
+.design-grid-4x3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1000px; /* Udah setara dengan ukuran kotak Code Grid */
+    margin: 0 auto;
+}
+
+.folder-card {
+    background: rgba(26, 26, 26, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Sedikit dilebarin kotak foldernya dari 4/3 jadi 16/10 */
+    aspect-ratio: 16 / 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.icon-folder { font-size: 50px; color: #444444; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.folder-name { position: absolute; color: #ffffff; font-weight: 700; font-size: 18px; opacity: 0; transform: translateY(20px); transition: all 0.4s ease; }
+.folder-card:hover { background: rgba(0, 210, 255, 0.1); border-color: #00d2ff; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0, 210, 255, 0.2); }
+.folder-card:hover .icon-folder { opacity: 0; transform: translateY(-20px) scale(0.5); }
+.folder-card:hover .folder-name { opacity: 1; transform: translateY(0); }
 
 /* ==================== CONTACT SECTION ==================== */
-
-.contact-container {
-    max-width: 600px;
-    margin: 0 auto; /* Biar form-nya persis di tengah layar */
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* Styling buat kolom input teks dan area pesan */
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 16px;
-    background-color: #12121200;
-    border: 1px solid #333;
-    border-radius: 8px;
-    color: #ffffff;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-/* Efek pas kolomnya diklik/diketik */
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #00d2ff;
-    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
-}
-
-/* Tombol Kirim Pesan */
-.btn-submit {
-    background-color: #00d2ff;
-    color: #121212;
-    padding: 16px;
-    border: 2px solid #00d2ff;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.btn-submit:hover {
-    background-color: transparent;
-    color: #00d2ff;
-    box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
-}
+.contact-grid { display: flex; gap: 50px; max-width: 1000px; margin: 0 auto; align-items: center; flex-wrap: wrap; }
+.contact-info, .contact-form-container { flex: 1; min-width: 300px; }
+.contact-info h3 { font-size: 32px; color: #ffffff; margin-bottom: 15px; font-weight: 800; }
+.contact-info p { color: #aaaaaa; line-height: 1.8; margin-bottom: 30px; }
+.social-links { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+.social-links li { display: flex; align-items: center; gap: 15px; color: #ffffff; font-size: 16px; font-weight: 500; }
+.social-links li a { color: #ffffff; text-decoration: none; transition: color 0.3s ease; }
+.social-links li a:hover { color: #00d2ff; }
+.social-links i { color: #00d2ff; font-size: 22px; width: 25px; text-align: center; }
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 16px; background-color: rgba(26, 26, 26, 0.5); border: 1px solid #333; border-radius: 8px; color: #ffffff; font-size: 16px; transition: all 0.3s ease; }
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: #00d2ff; box-shadow: 0 0 10px rgba(0, 210, 255, 0.2); }
+.btn-submit { background-color: #00d2ff; color: #121212; padding: 16px; border: 2px solid #00d2ff; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; }
+.btn-submit:hover { background-color: transparent; color: #00d2ff; box-shadow: 0 0 15px rgba(0, 210, 255, 0.4); }
 
 /* ==================== FOOTER ==================== */
-footer {
-    text-align: center;
-    padding: 25px;
-    background-color: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
-    /* border-top dihapus */
-    color: #888888;
-    font-size: 14px;
-    letter-spacing: 1px;
-}
+footer { text-align: center; padding: 25px; background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(10px); color: #888888; font-size: 14px; letter-spacing: 1px; }
 
 /* ==================== JS ANIMATION CLASSES ==================== */
-/* Posisi awal sebelum muncul (Ngumpet & Turun 50px) */
-.reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-}
-
-/* Posisi pas disorot layar (Kelihatan & Balik ke posisi normal) */
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Biar pas lu klik menu di navbar, scroll-nya jalan mulus */
-html {
-    scroll-behavior: smooth;
-}
+.reveal { opacity: 0; transform: translateY(50px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+html { scroll-behavior: smooth; }

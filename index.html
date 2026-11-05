@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aldi | Portfolio</title>
+    <!-- Google Font: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <!-- Ini link Font Awesome buat manggil ikonnya -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.jpeg">
 </head>
@@ -17,117 +18,200 @@
         <div class="blob blob-3"></div>
     </div>
     
-    <!-- NAVBAR SECTION -->
+    <!-- NAVBAR SECTION (Active Scroll Style) -->
     <nav>
-        <!-- Kiri: Logo -->
-        <h1 class="logo">AL</h1>
-        
-        <!-- Tengah: Ikon Menu -->
         <ul class="nav-links">
-            <li><a href="#home" title="Home"><i class="fa-solid fa-house"></i></a></li>
-            <li><a href="#about" title="About"><i class="fa-solid fa-user"></i></a></li>
-            <li><a href="#contact" title="Contact"><i class="fa-solid fa-envelope"></i></a></li>
+            <li><a href="#home" title="Home" class="nav-item active"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#about" title="About" class="nav-item"><i class="fa-solid fa-user"></i></a></li>
+            <!-- Tambahan Section Experience kosongan -->
+            <li><a href="#experience" title="Experience" class="nav-item"><i class="fa-solid fa-file-lines"></i></a></li>
+            <li><a href="#works" title="Works" class="nav-item"><i class="fa-solid fa-briefcase"></i></a></li>
+            <li><a href="#contact" title="Contact" class="nav-item"><i class="fa-solid fa-envelope"></i></a></li>
         </ul>
-
-        <!-- Kanan: Tombol CV -->
-        <a href="#cv" class="btn-cv">View CV</a>
     </nav>
 
     <!-- HERO SECTION -->
     <section id="home" class="hero">
-        <!-- Kiri: Teks & Tombol -->
-        <div class="hero-content">
-            <p class="greeting">Hi, saya</p>
-            <h1 class="name">ALDI TRIANTO<span class="dot">.</span></h1>
-            <h2 class="role">Tech Enthusiast & Operational Logistic</h2>
+        <div class="hero-content reveal">
+            <p class="greeting">Welcome to</p>
+            <h1 class="name">My Portofolio</h1>
+            <!-- Container buat efek typing bergantian -->
+            <h2 class="role">I am a <span class="typing-text"></span><span class="cursor">|</span></h2>
             <p class="desc">
-                A technology enthusiast, from gadgets to web and app development. Enjoys learning new things and has a career focus in administration, logistics, and operations.
+                A technology enthusiast, from gadgets to administration and graphic designing. Enjoys learning new things and has a career focus in administration, logistics, and operations.
             </p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn-primary">Explore Projects</a>
+                <a href="#works" class="btn-primary">Explore Works</a>
                 <a href="#" class="btn-secondary">
                     <i class="fa-brands fa-github"></i> GitHub
                 </a>
             </div>
         </div>
 
-        <!-- Kanan: Foto -->
-        <div class="hero-image">
-            <!-- Ini pake placeholder gambar kosong dulu, nanti bisa lu ganti pake foto asli lu -->
-            <img src="img/foto belakang.jpeg" alt="Foto Profil">
+        <!-- Foto Click & Switch -->
+        <div class="hero-image reveal" style="transition-delay: 200ms;">
+            <!-- Placeholder abu putih sebagai cover depan -->
+            <img src="https://via.placeholder.com/350x350/cccccc/ffffff?text=?" alt="Click Me" class="hero-img-front" id="heroPhotoFront">
+            <!-- Foto lu ngumpet di belakang -->
+            <img src="img/foto belakang.jpeg" alt="Foto Profil" class="hero-img-back" id="heroPhotoBack">
         </div>
     </section>
 
     <!-- ABOUT SECTION -->
     <section id="about" class="about">
-        <h2 class="section-title">About <span>Me</span></h2>
+        <h2 class="section-title reveal">Who <span>I'am?</span></h2>
         
         <div class="about-grid">
-            <!-- Kiri: Intro & Tombol CV -->
             <div class="about-left reveal">
-                <p class="greeting-small">Halo, aku</p>
-                <h3 class="name-small">Aldi Trianto</h3>
+                <p class="greeting-small">Hi, I'am</p>
+                <!-- Hapus margin bawah Aldi biar nempel sama Trianto -->
+                <h3 class="name-small" style="margin-bottom: 0;">Aldi</h3>
+                <h3 class="name-small">Trianto</h3>
                 <a href="#cv" class="btn-primary mt-4">View CV</a>
             </div>
 
-            <!-- Tengah: Foto Interaktif Spiderman -->
             <div class="about-center reveal" style="transition-delay: 100ms;">
                 <div class="photo-container">
-                    <!-- Pastiin path fotonya sesuai sama folder lu -->
                     <img src="img/kaos.png" alt="Aldi Biasa" class="photo-base">
                     <img src="img/kostum.png" alt="Aldi Spiderman" class="photo-hover">
                 </div>
             </div>
 
-            <!-- Kanan: Deskripsi -->
             <div class="about-right reveal" style="transition-delay: 200ms;">
                 <p>
-                    An operational practitioner with a track record across retail, warehousing, and logistics sectors, including file administration and education. Demonstrated operational data analysis skills, strong problem-solving initiative in the field, and adaptability in leading efficient team workflows and completing tasks independently.
+                    Saya? Bukan orang yang pintar teknologi, developer, bahkan hacker. Saya cuma sekedar penikmat teknologi mulai dari game, gadget, medsos, eksplor ai, dan juga design. Suka aja untuk eksplor hal lain sewaktu otak lagi jenuh.
+                </p>
+                <br>
+                <p>
+                    Perkembangan diri saya saat ini gak jauh dari beberapa aplikasi, seperti Word, Excel, Canva, Visual Studio Code. Saya sangat bersyukur bisa menggunakan beberapa aplikasi itu untuk belajar, menambah uang jajan dan juga eksplorasi.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="projects">
-        <h2 class="section-title">My <span>Projects</span></h2>
+    <!-- EXPERIENCE SECTION (Kosongan Dulu) -->
+    <section id="experience" class="experience">
+        <h2 class="section-title reveal">Work <span>Experience?</span></h2>
+        <!-- Isinya ntar lu tambahin di sini -->
+    </section>
+
+    <!-- WORKS SECTION -->
+    <section id="works" class="projects">
+        <h2 class="section-title reveal">Little Bit <span>Creations</span></h2>
         
-        <div class="project-grid">
-            <!-- Project 1: Web Portofolio -->
-            <div class="project-card">
-                <!-- Pake gambar sementara dulu -->
-                <img src="https://via.placeholder.com/400x250/1a1a1a/00d2ff?text=Web+Portfolio" alt="Web Portfolio">
-                <div class="project-info">
-                    <h3>Personal Web Portfolio</h3>
-                    <p>Web portofolio yang dibangun dari nol pakai Vanilla HTML, CSS, dan JS. Punya desain responsif dan tema dark-neon.</p>
-                    <a href="#" class="btn-project">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
+        <!-- Code Portfolio -->
+        <div class="portfolio-category reveal">
+            <h3 class="category-title-left"><i class="fa-solid fa-code"></i> Code</h3>
+            
+            <div class="code-grid">
+                <div class="code-card">
+                    <img src="https://via.placeholder.com/600x300/1a1a1a/00d2ff?text=Web+Portfolio" alt="Web Portfolio">
+                    <div class="code-info">
+                        <h3>Code 1</h3>
+                        <a href="#" class="btn-project">View More<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="code-card">
+                    <img src="https://via.placeholder.com/600x300/1a1a1a/00d2ff?text=Excel+Dashboard" alt="Excel System">
+                    <div class="code-info">
+                        <h3>Code 2</h3>
+                        <a href="#" class="btn-project">View More<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Tambahan Card Ketiga Biar Pas 3 Kolom -->
+                <div class="code-card">
+                    <img src="https://via.placeholder.com/600x300/1a1a1a/00d2ff?text=Third+Project" alt="Third Project">
+                    <div class="code-info">
+                        <h3>Code 3</h3>
+                        <a href="#" class="btn-project">View More<i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Project 2: Excel / Operasional -->
-            <div class="project-card">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/00d2ff?text=Excel+Dashboard" alt="Excel System">
-                <div class="project-info">
-                    <h3>Excel Inventory System</h3>
-                    <p>Sistem pencatatan dan monitoring stok barang operasional menggunakan Microsoft Excel untuk efisiensi data.</p>
-                    <a href="#" class="btn-project">Lihat Detail <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
+        <!-- Design Portfolio (12 Bulan Folder Hover) -->
+        <div class="portfolio-category reveal mt-5">
+            <h3 class="category-title-left"><i class="fa-solid fa-pen-nib"></i> Design</h3>
+            
+            <div class="design-grid-4x3">
+                <a href="januari.html" class="folder-card">
+                    <i class="fa-solid fa-folder icon-folder"></i>
+                    <span class="folder-name">Januari</span>
+                </a>
+                <a href="februari.html" class="folder-card">
+                    <i class="fa-solid fa-folder icon-folder"></i>
+                    <span class="folder-name">Februari</span>
+                </a>
+                <a href="maret.html" class="folder-card">
+                    <i class="fa-solid fa-folder icon-folder"></i>
+                    <span class="folder-name">Maret</span>
+                </a>
+                <a href="april.html" class="folder-card">
+                    <i class="fa-solid fa-folder icon-folder"></i>
+                    <span class="folder-name">April</span>
+                </a>
+                <a href="mei.html" class="folder-card">
+                    <i class="fa-solid fa-folder icon-folder"></i>
+                    <span class="folder-name">Mei</span>
+                </a>
+                <a href="juni.html" class="folder-card">
+                    <i class="fa-solid fa-folder icon-folder"></i>
+                    <span class="folder-name">Juni</span>
+                </a>
+                <a href="juli.html" class="folder-card">
+                    <i class="fa-solid fa-folder icon-folder"></i>
+                    <span class="folder-name">Juli</span>
+                </a>
+                <a href="agustus.html" class="folder-card">
+                    <i class="fa-solid fa-folder icon-folder"></i>
+                    <span class="folder-name">Agustus</span>
+                </a>
+                <a href="september.html" class="folder-card">
+                    <i class="fa-solid fa-folder icon-folder"></i>
+                    <span class="folder-name">September</span>
+                </a>
+                <a href="oktober.html" class="folder-card">
+                    <i class="fa-solid fa-folder icon-folder"></i>
+                    <span class="folder-name">Oktober</span>
+                </a>
+                <a href="november.html" class="folder-card">
+                    <i class="fa-solid fa-folder icon-folder"></i>
+                    <span class="folder-name">November</span>
+                </a>
+                <a href="desember.html" class="folder-card">
+                    <i class="fa-solid fa-folder icon-folder"></i>
+                    <span class="folder-name">Desember</span>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="contact">
-        <h2 class="section-title">Contact <span>Me</span></h2>
+        <h2 class="section-title reveal">Let's <span>Connect</span></h2>
         
-        <div class="contact-container">
-            <!-- Form ini belum aktif kirim email beneran, buat UI dulu -->
-            <form action="#" class="contact-form">
-                <input type="text" placeholder="Nama Lu" required>
-                <input type="email" placeholder="Email Lu" required>
-                <textarea cols="30" rows="6" placeholder="Ketik pesan lu di sini..." required></textarea>
-                <button type="submit" class="btn-submit">Kirim Pesan</button>
-            </form>
+        <div class="contact-grid">
+            <div class="contact-info reveal">
+                <h3>Find Me Here</h3>
+                <p>Tertarik buat kolaborasi, diskusi operasional, atau sekadar *sharing* soal tech? Kontak aja lewat platform di bawah ini.</p>
+                <ul class="social-links">
+                    <li><i class="fa-solid fa-location-dot"></i> Jakarta, Indonesia</li>
+                    <li><i class="fa-solid fa-envelope"></i> alditrianto@gmail.com</li>
+                    <li><a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a></li>
+                    <li><a href="#"><i class="fa-brands fa-github"></i> GitHub Portfolio</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-form-container reveal" style="transition-delay: 100ms;">
+                <form action="#" class="contact-form">
+                    <input type="text" placeholder="Nama Lu" required>
+                    <input type="email" placeholder="Email Lu" required>
+                    <textarea cols="30" rows="5" placeholder="Ketik pesan lu di sini..." required></textarea>
+                    <button type="submit" class="btn-submit">Kirim Pesan</button>
+                </form>
+            </div>
         </div>
     </section>
 
