@@ -1,0 +1,14 @@
+/* ==================== PROJECT DETAIL / TEMPLATE PAGE ==================== */
+/* Biar konten di halaman spesifik gak nabrak navbar dan menuhin layar */
+.project-detail-section {
+    min-height: 85vh;
+    padding-top: 150px; 
+}
+
+/* Biar rapi di tengah */
+.project-detail-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    color: #aaaaaa;
+}

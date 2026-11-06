@@ -17,7 +17,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-const elementsToReveal = document.querySelectorAll('.hero-content, .hero-image, .section-title, .about-left, .about-center, .about-right, .portfolio-category, .code-card, .folder-card, .contact-info, .contact-form-container');
+const elementsToReveal = document.querySelectorAll('.hero-content, .hero-image, .section-title, .about-left, .about-center, .about-right, .big-works-grid, .contact-layout');
 elementsToReveal.forEach(el => {
     el.classList.add('reveal');
     observer.observe(el);
@@ -46,7 +46,7 @@ let charIndex = 0;
 let isDeleting = false; 
 
 function typeAnimation() {
-    if (!typingTextElement) return; // Jaga-jaga biar gak error
+    if (!typingTextElement) return;
 
     const currentWord = textArray[textIndex];
     
@@ -75,10 +75,8 @@ function typeAnimation() {
 document.addEventListener("DOMContentLoaded", typeAnimation);
 
 
-// ==================== 4. HOVER FOTO HERO BUAT SWITCH ====================
-// Foto Hero ganti pas disorot kursor (hover)
+// ==================== 4. HOVER FOTO HERO BUAT SWITCH (LOCKED!) ====================
 const heroImageArea = document.querySelector('.hero-image');
-
 if (heroImageArea) {
     heroImageArea.addEventListener('mouseenter', () => {
         heroImageArea.classList.add('switched');
@@ -96,21 +94,16 @@ const spideyPhoto = document.getElementById('spideyPhoto');
 
 if (spideyContainer && spideyPhoto) {
     spideyContainer.addEventListener('mousemove', (e) => {
-        // Ngitung koordinat mouse relatif terhadap posisi container foto
         const rect = spideyContainer.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-
-        // Munculin foto Spiderman cuma dalam radius lingkaran 60px (mirip senter)
         spideyPhoto.style.clipPath = `circle(60px at ${x}px ${y}px)`;
     });
 
-    // Pas kursor keluar container, foto Spiderman nutup balik
     spideyContainer.addEventListener('mouseleave', () => {
         spideyPhoto.style.clipPath = `circle(0px at 50% 50%)`;
     });
 }
-
 
 // ==================== 6. UPDATE WARNA NAV ICON PAS SCROLL ====================
 const sections = document.querySelectorAll("section");
